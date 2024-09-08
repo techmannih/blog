@@ -30,7 +30,7 @@ jobs:
 
     - name: Build and Push Docker Image
       run: |
-        cd server
+        cd backend
         docker build -t ${{ secrets.DOCKER_USERNAME }}/blog:latest .
         docker push ${{ secrets.DOCKER_USERNAME }}/blog:latest
 
