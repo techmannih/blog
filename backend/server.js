@@ -5,11 +5,11 @@ import cors from "cors";
 
 const app = express();
 dotenv.config();
-const PORT = process.env.PORT || 4000;
+const PORT = process.env.PORT || 3000;
 
 app.use(cors(
   {
-    origin: "http://localhost:3000",
+    origin: "https://blog-six-azure-35.vercel.app/",
   }
 ));
 app.use(express.json());

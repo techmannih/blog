@@ -9,13 +9,14 @@ const BlogCard = dynamic(() => import("./components/BlogCard"), { ssr: false });
 
 export default function Home() {
   const [posts, setPosts] = useState([]);
+  console.log("Backend URL:", process.env.NEXT_PUBLIC_BACKEND_URL);
 
   useEffect(() => {
     const fetchPosts = async () => {
-      console.log(process.env.PUBLIC_BACKEND_URL);
+      console.log(process.env.NEXT_PUBLIC_BACKEND_URL);
       try {
         const response = await fetch(
-          `${process.env.PUBLIC_BACKEND_URL}/posts/get`
+          `https://blognext-ckh7gyhzd6f2gcg8.eastus-01.azurewebsites.net/api/posts/get`
         );
         const data = await response.json();
         setPosts(data);

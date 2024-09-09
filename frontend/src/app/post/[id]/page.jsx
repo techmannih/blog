@@ -26,7 +26,7 @@ const PostPage = () => {
     const fetchPost = async () => {
       try {
         const response = await fetch(
-          `${process.env.PUBLIC_BACKEND_URL}/posts/${id}`
+          `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/posts/${id}`
         );
         const data = await response.json();
         setPost(data);

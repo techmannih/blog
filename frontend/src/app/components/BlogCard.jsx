@@ -37,7 +37,7 @@ const BlogCard = ({ post }) => {
   const [showModal, setShowModal] = useState(false);
 
   const handleDelete = () => {
-    fetch(`http://localhost:3001/api/posts/delete/${post.id}`, {
+    fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/posts/delete/${post.id}`, {
       method: "DELETE",
     })
       .then((response) => response.json())
